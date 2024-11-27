@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>ГОСТ Р 7.0.100-2018</title>
+    <id>http://www.zotero.org/styles/gost-r-7-0-100-2018</id>
+    <link href="http://www.zotero.org/styles/gost-r-7-0-100-2018" rel="self"/>
+    <author>
+      <name>Ваше Имя</name>
+      <email>your.email@example.com</email>
+    </author>
+    <category citation-format="numeric"/>
+    <updated>2023-10-01T00:00:00+00:00</updated>
+    <summary>Стиль цитирования по ГОСТ Р 7.0.100-2018 для Mendeley</summary>
+    <rights>This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+    <language>ru</language>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name form="long" initialize-with=". " delimiter=", "/>
+    </names>
+  </macro>
+
+  <macro name="title">
+    <choose>
+      <if type="article-journal article-magazine article-newspaper" match="any">
+        <text variable="title" quotes="true"/>
+      </if>
+      <else>
+        <text variable="title" font-style="italic"/>
+      </else>
+    </choose>
+  </macro>
+
+  <citation collapse="citation-number">
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <bibliography>
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout hanging-indent="true" delimiter=". ">
+      <text variable="citation-number" prefix="[" suffix="] "/>
+      <group delimiter=", ">
+        <text macro="author"/>
+        <text macro="title"/>
+        <text variable="container-title"/>
+        <date variable="issued">
+          <date-part name="year"/>
+        </date>
+        <text variable="publisher"/>
+        <text variable="URL" prefix="Доступно по адресу: "/>
+      </group>
+      <text macro="access" prefix=". "/>
+    </layout>
+  </bibliography>
+</style>
